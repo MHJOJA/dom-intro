@@ -5,13 +5,13 @@ const addToBillBtn = document.querySelector('.addToBillBtn');
 const billTypeText = document.querySelector('.billTypeText');
 
 //create a variable that will keep track of the total bill
-const totalCostElem = document.querySelector('.totalOne');
+const totalCostElem = document.querySelector('.totalTwo');
 
 //create a variable that will keep track of the sms bill
-const smsTotalElem = document.querySelector('.smsTotalOne');
+const smsTotalElem = document.querySelector('.smsTotalTwo');
 
 //create a variable that will keep track of the call bill
-const callsTotalElem =document.querySelector('.callTotalOne');
+const callsTotalElem =document.querySelector('.totalTwo');
 
 var callsTotal = 0;
 var smsTotal = 0;
