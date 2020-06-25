@@ -1,11 +1,12 @@
 // get a reference to the sms or call radio buttons
-const billItemTypeRadioElement = document.querySelector(".billItemTypeRadio");
+const billTypeElement = document.querySelector(".billItemTypeRadio");
 
-// get a reference to the  calls radio buttons
-callsTotalElem =document.querySelector('.callTotalTwo');
+// get a reference to the  calls total
+const callsElement =document.querySelector('.callTotalTwo');
 
-// get a refference to the sms radio buttons
-smsTotalElement = document.querySelector('.smsTotalTwo')
+//get refference to sms total
+const smsElement = document.querySelector('.smsTotalTwo')
+
 
 //get a reference to the add button
 const adBtnElement = document.querySelector(".radioBillAddBtn");
@@ -13,26 +14,16 @@ const adBtnElement = document.querySelector(".radioBillAddBtn");
 //create a variable that will keep track of the total bill
 const TotalBill = document.querySelector("callTotalTwo");
 
-var checkedRadioBtn = document.querySelector("input[name='billItemType']:checked");
-if (checkedRadioBtn){
-    var billItemType = checkedRadioBtn.value
-    // billItemType will be 'call' or 'sms'
-}
-
-
-
-
-
-
 //add an event listener for when the add button is pressed
 
 
 var callsTotal = 0;
 var smsTotal = 0;
+var callsTotal = 0;
 
 function radioBillTotal(){
        
-    var billTypeEntered = callsTotalElem.value.trim();
+    var billTypeEntered = billTypeElement.value.trim();
     
     if (billTypeEntered === "call"){
         callsTotal += 2.75
@@ -44,10 +35,10 @@ function radioBillTotal(){
     }
     
     //update the totals that is displayed on the screen.
-    callsTotalElem.innerHTML = callsTotal.toFixed(2);
-    smsTotalElem.innerHTML = smsTotal.toFixed(2);
-    var totalCost = callsTotal + smsTotal;
-    totalCostElem.innerHTML = totalCost.toFixed(2);
+    callsElement.innerHTML = callsTotal.toFixed(2);
+    smsElement.innerHTML = smsTotal.toFixed(2);
+    var totalCosts = callsTotal + smsTotal;
+    TotalBill.innerHTML = totalCosts.toFixed(2);
     styleTotal();
 }
 adBtnElement.addEventListener('click', radioBillTotal())
