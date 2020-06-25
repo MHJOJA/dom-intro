@@ -12,35 +12,15 @@ const smsElement = document.querySelector('.smsTotalTwo')
 const adBtnElement = document.querySelector(".radioBillAddBtn");
 
 //create a variable that will keep track of the total bill
-const TotalBill = document.querySelector("callTotalTwo");
+const totalCostElement = document.querySelector("callTotalTwo");
 
 //add an event listener for when the add button is pressed
 
 
 var callsTotal = 0;
 var smsTotal = 0;
-var callsTotal = 0;
+var billTotal = '';
 
-function radioBillTotal(){
-       
-    var billTypeEntered = billTypeElement.value.trim();
-    
-    if (billTypeEntered === "call"){
-        callsTotal += 2.75
-    }
-    else if (billTypeEntered === "sms"){
-        smsTotal += 0.75;
-    }else {
-        billTotal = '';
-    }
-    
-    //update the totals that is displayed on the screen.
-    callsElement.innerHTML = callsTotal.toFixed(2);
-    smsElement.innerHTML = smsTotal.toFixed(2);
-    var totalCosts = callsTotal + smsTotal;
-    TotalBill.innerHTML = totalCosts.toFixed(2);
-    styleTotal();
-}
 adBtnElement.addEventListener('click', radioBillTotal())
 
 //in the event listener get the value from the billItemTypeRadio radio buttons
