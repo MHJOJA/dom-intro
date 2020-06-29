@@ -15,7 +15,6 @@ const callsTotalElem =document.querySelector('.callTotalOne');
 
 var callsTotal = 0;
 var smsTotal = 0;
-var billTotal = '';
 //add an event listener for when the add button is pressed
 
 
@@ -29,8 +28,6 @@ var billTotal = '';
         }
         else if (billTypeEntered === "sms"){
             smsTotal += 0.75;
-        }else {
-            billTotal = '';
         }
         
         //update the totals that is displayed on the screen.
