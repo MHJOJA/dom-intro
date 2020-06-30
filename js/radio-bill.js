@@ -11,40 +11,54 @@ const smsElement = document.querySelector('.smsTotalTwo')
 const adBtnElement = document.querySelector(".radioBillAddBtn");
     
 //create a variable that will keep track of the total bill
-const totalCostElement = document.querySelector(".TotalTwo");
+const totalCostElement = document.querySelector(".totalTwo");
 
 //add an event listener for when the add button is pressed
 
-var callsTotal = 2.75;
-var smsTotal = 0;
-var billTotal = '';
+var callsTotalTwo = 0;
+var smsTotalTwo = 0;
+var billTotalTwo = 0;
 
 
 function radioBillTotal(){
        
     var checkedRadioBtn = document.querySelector("input[name='billItemType']:checked");
     if (checkedRadioBtn){
-        billItemType = checkedRadioBtn.value*
+
+      let  billItemType = checkedRadioBtn.value;
         // billItemType will be 'call' or 'sms'
     
-    
-        (billItemType === "call")
-            callsTotal += 2.75
+        if (billItemType === "call"){
+            callsTotalTwo += 2.75
         }
-        (billItemType === "sms")
-            smsTotal += 0.75;
+         if (billItemType === "sms"){
+            smsTotalTwo+= 0.75;
         }
 
-    
-    //update the totals that is displayed on the screen.
-    callsTotalElem.innerHTML = callsTotal.toFixed(2);
-    smsTotalElem.innerHTML = smsTotal.toFixed(2);
-    var totalCost = callsTotal + smsTotal;
-    totalCostElem.innerHTML = totalCost.toFixed(2);
-    styleTotal();
+    }
+callsElement.innerHTML = callsTotalTwo.toFixed(2);
+smsElement.innerHTML = smsTotalTwo.toFixed(2);
+billTotalTwo = callsTotalTwo + smsTotalTwo;
+totalCostElement.innerHTML = billTotalTwo.toFixed(2);
+styling()
+}
+
+function styling(){
 
 
+    totalCostElement.classList.remove("danger");
+    totalCostElement.classList.remove("warning");
 
+    const totalCost = Number( totalCostElem.innerHTML)
+
+    if (billTotalTwo >= 50){
+        totalCostElement.classList.add("danger");
+    }
+    else if (billTotalTwo >= 30  && billTotalTwo < 50){
+        totalCostElement.classList.add('warning');
+
+    }
+}
 adBtnElement.addEventListener('click', radioBillTotal)
 
 //in the event listener get the value from the billItemTypeRadio radio buttons
