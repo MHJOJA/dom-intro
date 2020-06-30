@@ -56,7 +56,7 @@ function billItemTypeRadio(){
     
         if (bill === "call"){
             callsTotalSet += callCost; 
-            alert(callCost)
+        
         }
          if (bill === "sms"){
             smsTotalSet += smsCost;
@@ -66,7 +66,7 @@ function billItemTypeRadio(){
     callTotalSettingsElem.innerHTML = callsTotalSet.toFixed(2);
  smsTotalSettingsElem.innerHTML = smsTotalSet.toFixed(2);
 billTotalSet = callsTotalSet + smsTotalSet;
-alert(billTotalSet)
+
 totalSettingsElem.innerHTML = billTotalSet.toFixed(2);
 setStyle()
 }
@@ -75,8 +75,8 @@ setStyle()
 function setStyle(){
 
 
-    totalCostElement.classList.remove("danger");
-    totalCostElement.classList.remove("warning");
+    totalCostElem.classList.remove("danger");
+    totalCostElem.classList.remove("warning");
 
     const totalCost = Number( totalCostElem.innerHTML)
 
@@ -84,7 +84,7 @@ function setStyle(){
         totalSettingsElem.classList.add("danger");
     }
     else if (billTotalSet >= 30  && billTotalTwo < 50){
-        totalSettingsElem.classList.add('warning');
+        totalSettingsElem.classList.add("warning");
 
     }
 }
