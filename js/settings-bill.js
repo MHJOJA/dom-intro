@@ -43,17 +43,9 @@ smsCost = Number (smsCostSettingElement.value);
 warningLev = Number(warningLevelSettingElement.value)
 criticalLev = Number(criticalLevelSettingElement.value);
 
-
-const totalCost = Number( totalCostElem.innerHTML)
-
-if (billTotalSet >= 50){
-    totalSettingsElem = criticalLev;
+setStyle()
 }
-else if (billTotalSet >= 30  && billTotalTwo < 50){
-    totalSettingsElem = warningLev;
 
-}
-}
 
 function billItemTypeRadio(){
        
@@ -77,9 +69,26 @@ function billItemTypeRadio(){
 billTotalSet = callsTotalSet + smsTotalSet;
 
 totalSettingsElem.innerHTML = billTotalSet.toFixed(2);
-setStyle()
+
 }
 
+
+function setStyle(){
+
+
+    totalCostElem.classList.remove("danger");
+    totalCostElem.classList.remove("warning");
+
+    const totalCost = Number( totalCostElem.innerHTML)
+
+    if (billTotalSet >= criticalLev){
+        totalSettingsElem.classList.add("danger");
+    }
+    else if (billTotalSet >= warningLev && billTotalSet < criticalLev){
+        totalSettingsElem.classList.add("warning");
+
+    }
+}
 
 //add an event listener for when the add button is pressed
 addBtn.addEventListener('click',billItemTypeRadio)
