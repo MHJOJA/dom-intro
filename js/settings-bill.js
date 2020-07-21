@@ -55,7 +55,7 @@ function billItemTypeRadio() {
             let bill = checkedRadioBtn.value;
             // billItemType will be 'call' or 'sms'
 
-            if (bill === "call") {
+            if (bill === "call") {  
                 callsTotalSet += callCost;
 
             }

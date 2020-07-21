@@ -25,7 +25,7 @@ function styleTotalColor(roundedBillTotal){
     billTotalSpanElement.classList.remove("danger")
     billTotalSpanElement.classList.remove("warning")
 
-    if (currentTotal >= 30){
+    if (currentTotal >= 30){billItemTypeWithSettings
         //make total red
         billTotalSpanElement.classList.add("danger")
 
