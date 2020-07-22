@@ -1,5 +1,5 @@
 
-function calculateBtnClicked(billStringField){
+function calculateButton(billStringField){
     
     var billString = billStringField
     //split the string

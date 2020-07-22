@@ -25,7 +25,7 @@ function styleTotalColor(roundedBillTotal){
     billTotalSpanElement.classList.remove("danger")
     billTotalSpanElement.classList.remove("warning")
 
-    if (currentTotal >= 30){billItemTypeWithSettings
+    if (currentTotal >= 30){
         //make total red
         billTotalSpanElement.classList.add("danger")
 
@@ -39,24 +39,24 @@ function styleTotalColor(roundedBillTotal){
 
 function calculateBtnClicked(){
     
-    var billString = billStringField.value;
-    //split the string
-    var billItems = billString.split(",");
-    // a variable for the total phone bill.
-    var billTotal = 0;
-    //loop over all the bill items
-    for (var i=0;i<billItems.length;i++){
-        var billItem = billItems[i].trim();
-        if (billItem === "call"){
-            billTotal += 2.75;
-        }
-        else if (billItem === "sms"){
-            billTotal += 0.75;
-        }
-    }
+     var billString = billStringField.value;
+    // //split the string
+    // var billItems = billString.split(",");
+    // // a variable for the total phone bill.
+    // var billTotal = 0;
+    // //loop over all the bill items
+    // for (var i=0;i<billItems.length;i++){
+    //     var billItem = billItems[i].trim();
+    //     if (billItem === "call"){
+    //         billTotal += 2.75;
+    //     }
+    //     else if (billItem === "sms"){
+    //         billTotal += 0.75;
+    //     }
+    // }
     
     //round to two decimals
-    var roundedBillTotal = billTotal.toFixed(2);
+    var roundedBillTotal = calculateButton(billString).toFixed(2);
     billTotalElement.innerHTML = roundedBillTotal;
     styleTotalColor(roundedBillTotal);
 }

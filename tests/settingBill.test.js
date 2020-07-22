@@ -215,8 +215,7 @@ describe( 'warning and crilical level', function(){
          settingBill.makeCall()
          settingBill.makeCall()
 
- 
- 
+  
          assert.equal('critical', settingBill.totalClassName());
          assert.equal(10, settingBill.getTotalCallCost());
 
