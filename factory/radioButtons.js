@@ -1,31 +1,40 @@
+function radioButtons() {
+    var callsTotalTwo = 0;
+    var smsTotalTwo = 0;
+    var billTotalTwo = 0;
 
-// var callsTotalTwo = 0;
-// var smsTotalTwo = 0;
-// var billTotalTwo = 0;
-
-
-// function radioBillTotal(){
-       
-//     var checkedRadioBtn = document.querySelector("input[name='billItemType']:checked");
-//     if (checkedRadioBtn){
-
-//       let  billItemType = checkedRadioBtn.value;
-//         // billItemType will be 'call' or 'sms'
     
-//         if (billItemType === "call"){
-//             callsTotalTwo += 2.75
-//         }
-//          if (billItemType === "sms"){
-//             smsTotalTwo+= 0.75;
-//         }
 
-//     }
-// }
-// function getTotalCallCost(){
-//     return callsTotalTwo
-// }
-// function getTotalCost(){
+    function radioBillTotal(billItemType) {
 
-//     billTotalTwo = callsTotalTwo + smsTotalTwo
-//     return billTotalTwo;
-// }
+        
+        if (billItemType === "call") {
+            callsTotalTwo += 2.75
+        }
+        if (billItemType === "sms") {
+            smsTotalTwo += 0.75;
+        }
+
+
+    }
+
+    function getCallsTotal() {
+        return callsTotalTwo
+    }
+    function getSmsTotal() {
+        return smsTotalTwo;
+    }
+
+    function getTotal() {
+        billTotalTwo = callsTotalTwo + smsTotalTwo;
+        return billTotalTwo;
+
+    }
+
+    return {
+        getSmsTotal,
+        radioBillTotal,
+        getTotal,
+        getCallsTotal,
+    }
+}
