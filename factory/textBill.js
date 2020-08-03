@@ -47,23 +47,25 @@
         return theCriticalLevel;
     }
     
+
+function hasReachedCriticalLevel(){
+
+    return getTotal() >= getCriticalLevel()
+    }
+    
     
     function totalClassName(){
-
-        if(hasReachedCriticalLevel()){
-            
-            return 'critical'
-        }
         
+        if ( hasReachedCriticalLevel()){
+    
+            return 'critical'
+        };
+      
             if (getTotal() >= getWarningLevel()){
     
                 return "warning"
             }
             
-        }
-        function hasReachedCriticalLevel(){
-            (getTotal() >= getCriticalLevel())
-
         }
         
 

@@ -40,9 +40,10 @@ describe('the text bill factory function', function () {
 
     })
 
-    it('should return "crittical" when the critical level', function () {
+    it('should return "critical" when the critical level', function () {
 
         let texTotal = TextTotal();
+        texTotal.setWarningLevel(5)
         texTotal.setCriticalLevel(15)
 
         texTotal.textBillTotal('call')
@@ -53,6 +54,7 @@ describe('the text bill factory function', function () {
         texTotal.textBillTotal('call')
 
         assert.equal(16.5,texTotal.getTotal())
+        assert.equal("critical",texTotal.totalClassName())
 
     })
 
